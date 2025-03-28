@@ -11,12 +11,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.textfield.TextInputEditText
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var inputEditText: EditText
     private lateinit var generateButton: Button
     private lateinit var textView3: TextView
+    private lateinit var closeBtn : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         inputEditText = findViewById(R.id.inputEditText)
         generateButton = findViewById(R.id.generateBtn)
         textView3 = findViewById(R.id.textView3)
+       closeBtn = findViewById(R.id.closeBtn)
+        
 
         generateButton.setOnClickListener {
             val timeOfDay = inputEditText.text.toString().trim()
@@ -33,6 +37,12 @@ class MainActivity : AppCompatActivity() {
             if (timeOfDay.isEmpty()) {
                 Toast.makeText(this, "Enter Input Please!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
+            }
+
+            closeBtn.setOnClickListener {
+
+                finishAffinity()
+                exitProcess(0)
             }
 
             val mealSuggestion = matchTimeOfDayToMeal(timeOfDay.lowercase())

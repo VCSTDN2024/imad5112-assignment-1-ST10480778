@@ -26,7 +26,7 @@ class Suggestionone : AppCompatActivity() {
         resultsTextView = findViewById(R.id.resultsText)
 
 
-
+     // used intent instead of clear() because it provided the reset function of application
         resetButton.setOnClickListener {
             intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
