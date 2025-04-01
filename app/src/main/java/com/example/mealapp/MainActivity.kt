@@ -10,7 +10,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.textfield.TextInputEditText
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
@@ -29,20 +28,21 @@ class MainActivity : AppCompatActivity() {
         generateButton = findViewById(R.id.generateBtn)
         textView3 = findViewById(R.id.textView3)
        closeBtn = findViewById(R.id.closeBtn)
-        
+
 
         generateButton.setOnClickListener {
             val timeOfDay = inputEditText.text.toString().trim()
-          //AI added return statement for correction to make sure that when the user doesn't enter an input it doesn't transfer to Suggestion one.xml
+
             if (timeOfDay.isEmpty()) {
                 Toast.makeText(this, "Enter Input Please!", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+                return@setOnClickListener//AI fixed if statement for correction to make sure that when the user doesn't enter an input it doesn't transfer to Suggestion-one.xml
             }
 
             closeBtn.setOnClickListener {
 
-                finishAffinity()
-                exitProcess(0)
+                moveTaskToBack(true)
+                android.os.Process.killProcess(android.os.Process.myPid())
+                exitProcess(1)
             }
 
             val mealSuggestion = matchTimeOfDayToMeal(timeOfDay.lowercase())
@@ -62,12 +62,13 @@ class MainActivity : AppCompatActivity() {
     private fun matchTimeOfDayToMeal(time: String): String {
         val mealOptions = mapOf(
             "breakfast" to "eggs, bacon and toast",
-            "snack" to "fruit salad",
+            "Mid-morning snack" to "fruit salad",
             "lunch" to "chicken wrap with fried chips",
-            "midday" to "a packet of Simba chips alongside nuts",
+            "mid day snack" to "a packet of Simba chips alongside nuts",
             "dinner" to "steak with mashed potatoes",
-            "dessert" to "ice cream"
+            "After-dinner snack" to "ice cream"
         )
+
       // AI added return statement for the result projection and error handling message
         return mealOptions[time]?.let { "Enjoy your meal of $it." } ?: "No meal option found for this time of day."
     }

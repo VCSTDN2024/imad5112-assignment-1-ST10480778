@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,6 +29,8 @@ class Suggestionone : AppCompatActivity() {
 
      // used intent instead of clear() because it provided the reset function of application
         resetButton.setOnClickListener {
+
+            Toast.makeText(this,"cleared and returned to the main page",Toast.LENGTH_SHORT).show()
             intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 
