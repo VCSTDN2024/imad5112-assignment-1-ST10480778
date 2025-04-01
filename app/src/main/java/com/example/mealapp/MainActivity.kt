@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             closeBtn.setOnClickListener {
-
                 moveTaskToBack(true)
                 android.os.Process.killProcess(android.os.Process.myPid())
                 exitProcess(1)
