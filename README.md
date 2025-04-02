@@ -49,23 +49,6 @@ User Experience (UX): The app was designed with the goal of providing an easy to
 
 Simplicity: The design is minimalistic, focusing on core features without overwhelming the user. 
 
- 
-
-GitHub and GitHub Actions 
-
-This project was managed using GitHub for version control, where all code changes were committed and pushed regularly. GitHub enabled collaborative coding. 
-
-GitHub Actions: 
-
-I used GitHub Actions to automate the build and deployment process. The workflow ensures that my project is automatically built and tested every time I push changes, and it simplifies the process of delivering the final APK/AAB files for submission 
-
----
-Screenshots
----
-![Screenshot 2025-04-02 181408](https://github.com/user-attachments/assets/14f7da1a-3fa8-4c84-9a8a-990b4f12c6ef)
-(Home Page)
-![Screenshot 2025-04-02 181431](https://github.com/user-attachments/assets/a5c44e9a-afa1-42ef-a836-697014f0ec76)
-(Result Page)
 
 ---
 Problems and solutions
@@ -91,22 +74,7 @@ Asked ai to give a skeleton of how to declare my variables.
 
 GitHub action workflow configuration 
 
-Had to change my code 
-
- 
-
- 
----
-References 
----
-Ingredients for cooking, 2023. Food background with herbs and vegetables. Top view, vertical. Stock Photo | Adobe Stock < https://images.app.goo.gl/LeLgSRWWTfDmHEJQ8 > [ Accessed 21 March 2025 ] 
-
- 
-
- 
-
-Technical Coding, 2020.How to Pass data from One to another Activity || Android studio tutorial < https://youtu.be/Yi8mxXsroJ4?si=hT8mZ0PLgxpwx_NA > [ Accessed 27 March 2025] 
-
+Had to change my code
  
 
  
@@ -114,15 +82,11 @@ Technical Coding, 2020.How to Pass data from One to another Activity || Android 
 AI Disclosure 
 ---
 
-1. what i asked ai
+1. what i asked ai , i aslo included my code in the ai question
 
 ![Screenshot 2025-03-26 225119](https://github.com/user-attachments/assets/0ea66d89-449d-4e32-84f2-93c39b56cc07)
-   
-![Screenshot 2025-03-26 225205](https://github.com/user-attachments/assets/53e0a2e5-958f-4e07-aa64-56cdc94f49be)
+  
 
-![Screenshot 2025-03-26 225249](https://github.com/user-attachments/assets/9bcbf82f-2c82-4c23-94c2-51e6adb4e1b5)
-
-![Screenshot 2025-03-26 225316](https://github.com/user-attachments/assets/93546ba8-3f13-45f3-9176-5208f1a027ff)
 
 2. what ai generated
 
@@ -132,9 +96,9 @@ AI Disclosure
 
 ![Screenshot 2025-03-26 225505](https://github.com/user-attachments/assets/1ab06dd3-9873-4c75-bf0d-448ec8ff7cc5)
 
-![Screenshot 2025-03-26 225534](https://github.com/user-attachments/assets/4cadda6a-3276-4587-89e4-5ef62c8d95d9)
 
-![Screenshot 2025-03-26 225607](https://github.com/user-attachments/assets/f9efd7bb-7e4e-4055-b57c-6c39f6eedbbb)
+
+
 
 
 
