@@ -7,8 +7,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import kotlin.system.exitProcess
 
 class Suggestionone : AppCompatActivity() {
@@ -42,18 +40,10 @@ class Suggestionone : AppCompatActivity() {
         }
 
 
-        val mealSuggestion: String? = intent.getStringExtra("TimeOfDay")
+        val mealSuggestion: String? = intent.getStringExtra("DayType")
 
-        resultsTextView.text = mealSuggestion ?: "No meal suggestion available"
+        resultsTextView.text = mealSuggestion ?: "No meal suggestion available."
 
-
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-
-        }
 
     }
 

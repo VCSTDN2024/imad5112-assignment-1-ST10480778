@@ -31,7 +31,7 @@
         android:id="@+id/generateBtn"
         android:layout_width="154dp"
         android:layout_height="58dp"
-        android:backgroundTint="@color/DarkGreen"
+        android:backgroundTint="@color/black"
         android:fontFamily="serif"
         android:text="Generate"
         android:textColor="@color/white"
@@ -60,7 +60,7 @@
         app:layout_constraintVertical_bias="0.002" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/greetingCardTxt"
         android:layout_width="156dp"
         android:layout_height="92dp"
         android:fontFamily="serif"
@@ -75,6 +75,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.171" />
+
+    <Button
+        android:id="@+id/closeBtn"
+        android:layout_width="154dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="72dp"
+        android:fontFamily="serif"
+        android:text="Exit"
+        android:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

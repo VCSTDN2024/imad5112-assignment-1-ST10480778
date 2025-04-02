@@ -4,19 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var inputEditText: EditText
     private lateinit var generateButton: Button
-    private lateinit var textView3: TextView
-
+    private lateinit var closeBtn : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,45 +21,41 @@ class MainActivity : AppCompatActivity() {
 
         inputEditText = findViewById(R.id.inputEditText)
         generateButton = findViewById(R.id.generateBtn)
-        textView3 = findViewById(R.id.textView3)
-
+       closeBtn = findViewById(R.id.closeBtn)
 
 
         generateButton.setOnClickListener {
             val timeOfDay = inputEditText.text.toString().trim()
 
             if (timeOfDay.isEmpty()) {
-                Toast.makeText(this, "Enter Input Please!", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener//AI fixed if statement for correction to make sure that when the user doesn't enter an input it doesn't transfer to Suggestion-one.xml
+                Toast.makeText(this, "Enter Time Of Day Input Please!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
-            
 
-            val mealSuggestion = matchTimeOfDayToMeal(timeOfDay.lowercase())
+            closeBtn.setOnClickListener {
+                finishAffinity()
+            }
+
+            val mealSuggestion = matchDayTypeToMealSuggestion(timeOfDay.lowercase())
 
             val intent = Intent(this, Suggestionone::class.java)
-            intent.putExtra("TimeOfDay", mealSuggestion)
+            intent.putExtra("DayType", mealSuggestion)
             startActivity(intent)
         }
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
     }
  // Used mapOf to store data in reference to the history application
-    private fun matchTimeOfDayToMeal(time: String): String {
-        val mealOptions = mapOf(
-            "breakfast" to "eggs, bacon and toast",
-            "Mid-morning snack" to "fruit salad",
-            "lunch" to "chicken wrap with fried chips",
-            "mid day snack" to "a packet of Simba chips alongside nuts",
+    private fun matchDayTypeToMealSuggestion (time: String): String {
+        val mealSuggestion = mapOf(
+            "breakfast" to "toast with jam",
+            "Mid-morning snack" to "packet of dried fruit",
+            "lunch" to "chicken and cabbage wrap ",
+            "mid day snack" to "a packet of Simba chips ",
             "dinner" to "steak with mashed potatoes",
             "After-dinner snack" to "ice cream"
         )
-
-      // AI added return statement for the result projection and error handling message
-        return mealOptions[time]?.let { "Enjoy your meal of $it." } ?: "No meal option found for this time of day."
+     
+        return mealSuggestion[time]?.let { "Enjoy your meal of $it." } ?: "No meal option found for this time of day."
     }
 }
 
