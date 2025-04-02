@@ -5,14 +5,14 @@ Yenziwe Silondiwe Zondi
 IMAD5112 
 
 ---
-***Meal application***
+***Meal application discussion***
 ---
 
 video:https://youtu.be/Te7tn2NpFr0?si=PDBE2-2Iw-weZiXR
 
 The mobile application is a mobile app that we were tasked to create for scenario to produce meal suggestions for the time of day in the edit text and give you results in the text view using Kotlin and Android  
 
-This app was designed to meet the requirements of the assignment. 
+ 
 
 Features
 ---
@@ -40,14 +40,6 @@ Button: Reset Button to clear and reset application back to Launcher page.
 
 Button: Exit Buton to exit the application from a different point. 
 
----
-Design Considerations
----
-The design of the Meal Application was based on the following key considerations: 
-
-User Experience (UX): The app was designed with the goal of providing an easy to use app that will allow the user to use the applicaation with no confusion , thats its seamless. 
-
-Simplicity: The design is minimalistic, focusing on core features without overwhelming the user. 
 
 
 ---
