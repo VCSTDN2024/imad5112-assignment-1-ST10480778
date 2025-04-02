@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var inputEditText: EditText
     private lateinit var generateButton: Button
     private lateinit var textView3: TextView
-    private lateinit var closeBtn : Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         inputEditText = findViewById(R.id.inputEditText)
         generateButton = findViewById(R.id.generateBtn)
         textView3 = findViewById(R.id.textView3)
-       closeBtn = findViewById(R.id.closeBtn)
+
 
 
         generateButton.setOnClickListener {
@@ -36,10 +36,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Enter Input Please!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener//AI fixed if statement for correction to make sure that when the user doesn't enter an input it doesn't transfer to Suggestion-one.xml
             }
-
-            closeBtn.setOnClickListener {
-                finishAffinity()
-            }
+            
 
             val mealSuggestion = matchTimeOfDayToMeal(timeOfDay.lowercase())
 
