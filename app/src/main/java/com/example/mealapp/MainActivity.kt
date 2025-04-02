@@ -10,7 +10,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,9 +38,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             closeBtn.setOnClickListener {
-                moveTaskToBack(true)
-                android.os.Process.killProcess(android.os.Process.myPid())
-                exitProcess(1)
+                finishAffinity()
             }
 
             val mealSuggestion = matchTimeOfDayToMeal(timeOfDay.lowercase())
